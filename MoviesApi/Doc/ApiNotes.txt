@@ -1,0 +1,85 @@
+﻿* API : Application Programming interface ,
+End points (set, Get , Put ..)
+
+ *
+[ApiController]
+[Route(api/[Controller]/[Action])]
+MyController : ControllerBase
+
+** Cors
+ال Api يتعامل فقط داخل نفس ال network
+ويرفض التعامل خارج ال network 
+Prevent any access fro other port 
+1- builder.Services.AddCors(); 
+2- app.UseCors(c => c.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+.. Allow access options (in header - any mwthod - ..)
+
+** DbContext 
+1- New folder : Data || Models 
+2- New class > ApplicationDbContxt :DbContext
+      public ApplicationDbContext(DbContextOptions<ApplicationDbContext> Myoptions) : base(options)    
+
+3- Connection string 
+file > Appsettings.json
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\ProjectModels;Database=Movies;Trusted_Connection=True"
+  }
+4- Add to program.cs
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer(connectionString));
+
+* eneral using 
+Normal class > Global using ---;
+
+** Models : 
+1- Models / Data Folder .
+2- Class for every entity 
+Validaition using - Data Annotation || Flunent Api
+3- Add Domain model to the datacontext
+   public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+      public DbSet<Genre> Genres { get; set; }
+4- add-migration Addmytables
+Remove-migration
+5- Update-database
+
+
+**DTO : Data Transfeer object
+Class to transfeer data from and to the API (end user)
+
+
+***** Summary ***
+1- Models : All the entity attributes & Validation by Data Annnontation . 
+2- DTO : Data Transfeer object > Select data which will transfeered from and to the API && Validation : To be combitable with DB "Model"
+3- Services : DB connection & Logic  
+4- Controller : use the services and handle last end point .
+
+
+**** End points 
+Update & delete : Not async 
+* must add the service in 
+builder.Services.AddTransient<IGenresService, GenresService>();
+
+*** Auto Mapper : 
+1- Add the backage .
+    AutoMapper.Microsoft.extenstions.dependancyinjection
+2- Add to program.cs
+    builder.Services.AddAutoMapper(typeof(Program));    //My proram.cs
+3- New folder : Helpers 
+4- new calss : MappingProfile.cs
+      using AutoMapper;
+      mappingprofile : Profile
+          CreateMap<Source _Movie, Destination_MovieDetailsDto>();
+
+          // will map every similar properities , If not same name > use ForMember(src=> src.name , op=>op.ignore)
+5- In my controler 
+   private readonly IMapper _mapper;
+   Dependancy injecton 
+6 - use 
+           var movies = await _moviesService.GetAll();   //Source from domain model
+
+            var data = _mapper.Map<IEnumerable<MovieDetailsDto>>(movies);  //Map to DTo
+
+            return Ok(data);  // return obj after mapping 
