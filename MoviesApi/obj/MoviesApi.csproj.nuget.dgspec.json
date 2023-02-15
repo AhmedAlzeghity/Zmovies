@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dev\\Projects\\Genre Movies\\MoviesApi\\MoviesApi.csproj": {}
+    "D:\\Dev\\Projects\\ZMovies\\MoviesApi\\MoviesApi.csproj": {}
   },
   "projects": {
-    "D:\\Dev\\Projects\\Genre Movies\\MoviesApi\\MoviesApi.csproj": {
+    "D:\\Dev\\Projects\\ZMovies\\MoviesApi\\MoviesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dev\\Projects\\Genre Movies\\MoviesApi\\MoviesApi.csproj",
+        "projectUniqueName": "D:\\Dev\\Projects\\ZMovies\\MoviesApi\\MoviesApi.csproj",
         "projectName": "MoviesApi",
-        "projectPath": "D:\\Dev\\Projects\\Genre Movies\\MoviesApi\\MoviesApi.csproj",
+        "projectPath": "D:\\Dev\\Projects\\ZMovies\\MoviesApi\\MoviesApi.csproj",
         "packagesPath": "C:\\Users\\Ahmed.Alzeghity\\.nuget\\packages\\",
-        "outputPath": "D:\\Dev\\Projects\\Genre Movies\\MoviesApi\\obj\\",
+        "outputPath": "D:\\Dev\\Projects\\ZMovies\\MoviesApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

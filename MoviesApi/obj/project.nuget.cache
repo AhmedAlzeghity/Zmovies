@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vyQYemHWVT9Qs/y8hkTwFO83sJPaLIBvQwKLTJL7USQRDtjonqIO3bA/gPBokWF6pp66IVcb3UxxwTvh3bkzVg==",
+  "dgSpecHash": "0aRrVeQh9GHdYbNsCZV5/DSLTG/NGtOGOMkuX79gd+uZlNdJTm3+lax2WQbbY36xjRfGtCAEWsRBNawMmW9iZw==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\Projects\\Genre Movies\\MoviesApi\\MoviesApi.csproj",
+  "projectFilePath": "D:\\Dev\\Projects\\ZMovies\\MoviesApi\\MoviesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ahmed.Alzeghity\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed.Alzeghity\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
