@@ -7,6 +7,7 @@ namespace MoviesApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class GenresController : ControllerBase
     {
       //Services instance , Dependancy injection 
